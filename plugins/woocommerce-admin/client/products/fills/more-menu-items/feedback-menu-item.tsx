@@ -12,7 +12,7 @@ import { useLayoutContext } from '@woocommerce/admin-layout';
  */
 import { FeedbackIcon } from '../../images/feedback-icon';
 
-export const FeedbackMenuItem = ( { onClose }: { onClose: () => void } ) => {
+export const FeedbackMenuItem = ( { onClick }: { onClick: () => void } ) => {
 	const { showCesModal } = useDispatch( CES_STORE_KEY );
 	const { isDescendantOf } = useLayoutContext();
 
@@ -46,7 +46,7 @@ export const FeedbackMenuItem = ( { onClose }: { onClose: () => void } ) => {
 						block_editor: isDescendantOf( 'product-block-editor' ),
 					}
 				);
-				onClose();
+				onClick();
 			} }
 			icon={ <FeedbackIcon /> }
 			iconPosition="right"
