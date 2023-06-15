@@ -26,9 +26,11 @@ const MoreMenuFill = ( { onClose }: { onClose: () => void } ) => {
 	const [ id ] = useEntityProp( 'postType', 'product', 'id' );
 
 	const handleClick = ( optionName: string ) => {
-		recordEvent( 'product_dropdown_option_click', { selected_option: optionName } );
+		recordEvent( 'product_dropdown_option_click', {
+			selected_option: optionName,
+		} );
 		onClose();
-	}
+	};
 
 	return (
 		<>
@@ -36,7 +38,7 @@ const MoreMenuFill = ( { onClose }: { onClose: () => void } ) => {
 			<ClassicEditorMenuItem
 				productId={ id }
 				onClick={ () => {
-					handleClick( 'classic_editor' )
+					handleClick( 'classic_editor' );
 				} }
 			/>
 		</>
